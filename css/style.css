@@ -1,0 +1,139 @@
+/* カスタムスタイル */
+
+/* 選択肢のホバー効果 */
+.option-card {
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.option-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #818CF8;
+}
+
+.option-card.selected {
+    background-color: #EEF2FF;
+    border-color: #6366F1;
+    transform: scale(1.02);
+}
+
+.option-card.selected .option-indicator {
+    background-color: #6366F1;
+    color: white;
+}
+
+/* 結果カードのスタイル */
+.result-card {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 100%);
+    border-left: 4px solid #6366F1;
+    transition: all 0.3s ease;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* プラン番号のバッジ */
+.plan-badge {
+    background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+/* 料金強調表示 */
+.price-highlight {
+    background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #92400E;
+    display: inline-block;
+}
+
+/* 注目ポイントのハイライト */
+.highlight-box {
+    background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
+    border-left: 3px solid #3B82F6;
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin: 8px 0;
+}
+
+/* 注意点のハイライト */
+.warning-box {
+    background: linear-gradient(135deg, #FEF3C7 0%, #FED7AA 100%);
+    border-left: 3px solid #F59E0B;
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin: 8px 0;
+}
+
+/* フェードインアニメーション */
+.fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* チェックアニメーション */
+.check-animation {
+    animation: checkmark 0.3s ease-out forwards;
+}
+
+@keyframes checkmark {
+    0% {
+        transform: scale(0) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(5deg);
+    }
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.25rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .plan-badge {
+        width: 32px;
+        height: 32px;
+        font-size: 0.875rem;
+    }
+}
