@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スマートフォン料金プラン診断システム</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen font-['Noto_Sans_JP']">
+    
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-center">
+                <i class="fas fa-mobile-alt text-indigo-600 text-2xl mr-3"></i>
+                <h1 class="text-2xl font-bold text-gray-800">スマートフォン料金プラン診断システム</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
+        
+        <!-- Introduction Section -->
+        <div id="intro-section" class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <div class="text-center">
+                <i class="fas fa-chart-line text-5xl text-indigo-600 mb-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">最適な料金プランを見つけましょう</h2>
+                <p class="text-gray-600 mb-6">
+                    簡単な4つの質問に答えるだけで、あなたにぴったりの料金プランをご提案します。<br>
+                    所要時間は約1分です。
+                </p>
+                <button id="start-btn" class="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors duration-200 shadow-md">
+                    <i class="fas fa-play mr-2"></i>診断を開始する
+                </button>
+            </div>
+        </div>
+
+        <!-- Question Section -->
+        <div id="question-section" class="hidden">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <!-- Progress Bar -->
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm text-gray-600">進捗状況</span>
+                        <span id="progress-text" class="text-sm text-gray-600">1 / 4</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div id="progress-bar" class="bg-indigo-600 h-2 rounded-full transition-all duration-300" style="width: 25%"></div>
+                    </div>
+                </div>
+
+                <!-- Question Content -->
+                <div id="question-content" class="mb-6">
+                    <h3 id="question-title" class="text-xl font-bold text-gray-800 mb-4"></h3>
+                    <div id="question-options" class="space-y-3">
+                        <!-- Options will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex justify-between mt-8">
+                    <button id="prev-btn" class="bg-gray-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-600 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <i class="fas fa-arrow-left mr-2"></i>前の質問
+                    </button>
+                    <button id="next-btn" class="bg-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                        次の質問<i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Section -->
+        <div id="result-section" class="hidden">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="text-center mb-6">
+                    <i class="fas fa-check-circle text-5xl text-green-500 mb-4"></i>
+                    <h2 class="text-2xl font-bold text-gray-800">診断結果をお伝えします。</h2>
+                </div>
+
+                <div id="result-content" class="space-y-6">
+                    <!-- Results will be inserted here -->
+                </div>
+
+                <div class="mt-8 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                    <p class="text-sm text-amber-800">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        プランの契約は、公式サイトで最新のキャンペーン情報をご確認の上、ご自身の判断で行ってください。
+                    </p>
+                </div>
+
+                <div class="text-center mt-8">
+                    <button id="restart-btn" class="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors duration-200 shadow-md">
+                        <i class="fas fa-redo mr-2"></i>もう一度診断する
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 pb-8">
+        <div class="container mx-auto px-4 text-center text-gray-600 text-sm">
+            <p>※ 料金は税込み表示です。サービス内容は2024年時点の情報に基づいています。</p>
+            <p class="mt-2">※ 実際の料金やサービス内容は各社公式サイトでご確認ください。</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
